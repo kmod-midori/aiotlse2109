@@ -1,0 +1,9 @@
+# Only package sources and metadata belong in the build context.
+*
+!Dockerfile
+!pyproject.toml
+!README.md
+!src/
+!src/**
+**/__pycache__/
+**/*.py[cod]

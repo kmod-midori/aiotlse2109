@@ -1,0 +1,12 @@
+services:
+  exporter:
+    image: ${EXPORTER_IMAGE:-aiotlse2109-exporter:local}
+    build:
+      context: ..
+    restart: unless-stopped
+    environment:
+      SE2109_HOST: ${SE2109_HOST:?Set SE2109_HOST}
+      SE2109_USER: ${SE2109_USER:?Set SE2109_USER}
+      SE2109_PASSWORD: ${SE2109_PASSWORD:?Set SE2109_PASSWORD}
+    ports:
+      - "127.0.0.1:9109:9109"
