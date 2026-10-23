@@ -17,9 +17,10 @@ need access to a physical switch or credentials.
 ## CI and releases
 
 GitHub Actions tests Python 3.11–3.14, runs Ruff, builds the wheel and source
-distribution (available as the `distributions` workflow artifact), and builds
-the exporter image on branch pushes and pull requests. Tests use simulated
-switches; no switch credentials are needed in CI.
+distribution (available as the `distributions` workflow artifact) on branch
+pushes and pull requests. The image job runs only for version-tag releases;
+it is skipped on branch pushes and pull requests. Tests use simulated switches;
+no switch credentials are needed in CI.
 
 Push a version tag such as `v0.1.0` to publish the image to
 `ghcr.io/OWNER/REPOSITORY:0.1.0` after checks pass. Update the package version
